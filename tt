@@ -1,0 +1,62 @@
+public class MySpecialArrayUtils {
+	
+	public static void main() {
+		
+		
+	}
+	
+	public static void reverse(int arr[]) {
+		for (int counter=0;counter<arr.length/2;counter++)
+			arr[counter]=arr[arr.length-1];
+	}
+	
+	public static int[] sumEvenOdd(int arr[]) {
+		int sum[]= {0,0};
+		if(arr.length==0)
+			return sum;
+		else {
+		for(int counter=0;counter<arr.length;counter++) {
+			if(counter%2==0)
+				sum[0]+=sum[counter];
+			if(counter%2!=0)
+				sum[1]+=sum[counter];
+		}
+		return sum;}
+	}
+	
+	
+	public static double average(int arr[]) {
+		double average=0;
+		double total=0;
+		if(arr.length==0)
+			return average;
+		else {
+			for(int counter=0;counter<arr.length;counter++) {
+				total+=arr[counter];
+			}
+			
+			average=total/arr.length;
+			return average;
+		}
+		
+	}
+	
+	public static void moveValue(int arr[],int val) {
+		int add=0,hold=0;
+		for(int counter=0;counter<arr.length;counter++)
+			if(arr[counter]==val)
+				add++;
+		for(int i=0;i<add;i++)
+			for(int j=0;j<arr.length;j++) { 
+				if(arr[j]==val)
+					hold=arr[j];
+				for(int k=arr[j+1];k<arr.length;k++)	
+		       arr[k-1]=arr[k];
+				
+				arr[arr.length-1-i]=hold;}
+				
+			
+	}
+	
+
+}
